@@ -1,0 +1,8 @@
+const discord = require(`discord.js`);
+exports.run = async (client, message, args, ops) => {
+
+}
+exports.settings = {
+    name: ``,
+    aliases: [``]
+}
