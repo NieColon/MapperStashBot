@@ -1,1 +1,3 @@
-worker: node index.js
+npm install --save discord.js
+
+worker: node .
