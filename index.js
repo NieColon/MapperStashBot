@@ -96,4 +96,4 @@ client.on(`ready`, () => {
   client.user.setUsername(`MapperStash`)
   client.user.setAvatar(`https://cdn.discordapp.com/attachments/556842081537228820/562801149351297045/icoo.png`)
 });
-client.login(`process.env.token`);
+client.login(process.env.token);
