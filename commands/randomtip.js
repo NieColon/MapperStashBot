@@ -23,7 +23,7 @@ exports.run = async (client, message, args, ops) => {
                     })
                     const dataquote = "```"
                     fs.readFile(`./tip.html`, function(err, data) {
-                    user.send(`Hi <@532724702838390798>, you have a new tip to review! \n**Tip**: ${sayMessage1}`);
+                    user.send(`Hi <@532724702838390798>, you have a new tip to review! \n**Tip**: ${sayMessage1}\n\n**Code**:${dataquote}html\n${data}${dataquote}`);
                     })
         })
 }
