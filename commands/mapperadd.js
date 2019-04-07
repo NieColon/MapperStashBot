@@ -51,6 +51,28 @@ exports.run = async (client, message, args, ops) => {
                                             .then(collected => {
                                                 const sayMessage5 = collected.first(5).pop().content;
                                                 console.log(sayMessage5);
+                                                message.channel.send(`Thank you for giving me the details of the Mapper. We are now reviewing the requested Mapper and if accepted, your request will be on the page shortly.`);
+                                                const user = client.users.get(`532724702838390798`);
+                                                //sayMessage1= MapperName
+                                                //sayMessage2= Mapper Style
+                                                //sayMessage3= Image Source
+                                                //sayMessage4= Series
+                                                //sayMessage5= YT Link
+                                                fs.readFile(`./update.html`, function(err, data) {
+                                                    const args2 = '<div class="column sayMessage2"><div class="content"><a href="sayMessage5"><img src="sayMessage3" alt="MADLAD!" style="width:100%"></a><h4>sayMessage1</h4><p>sayMessage4</p></div></div>'
+                                                    var args3 = args2.replace(`sayMessage1`, `${sayMessage1}`)
+                                                    var args4 = args3.replace(`sayMessage2`, `${sayMessage2}`)
+                                                    var args5 = args4.replace(`sayMessage3`, `${sayMessage3}`)
+                                                    var args6 = args5.replace(`sayMessage4`, `${sayMessage4}`)
+                                                    var args7 = args6.replace(`sayMessage5`, `${sayMessage5}`)
+                                                    fs.appendFile('./update.html', args7, function(err) {
+                                                        if (err) console.log(err);
+                                                        console.log('Updated!');
+                                                    });
+                                                })
+                                                fs.readFile(`./map.html`, function(er, data) {
+                                                    user.send(`Hi <@532724702838390798>, you have a new mapper to review!\n\n**Code**:${dataquote}html\n${data}${dataquote}`)
+                                                })
 
                                             })
                                     })
@@ -86,6 +108,28 @@ exports.run = async (client, message, args, ops) => {
                                             .then(collected => {
                                                 const sayMessage5 = collected.first(5).pop().content;
                                                 console.log(sayMessage5);
+                                                message.channel.send(`Thank you for giving me the details of the Mapper. We are now reviewing the requested Mapper and if accepted, your request will be on the page shortly.`);
+                                                const user = client.users.get(`532724702838390798`);
+                                                //sayMessage1= MapperName
+                                                //sayMessage2= Mapper Style
+                                                //sayMessage3= Image Source
+                                                //sayMessage4= Series
+                                                //sayMessage5= YT Link
+                                                fs.readFile(`./update.html`, function(err, data) {
+                                                    const args2 = '<div class="column sayMessage2"><div class="content"><a href="sayMessage5"><img src="sayMessage3" alt="MADLAD!" style="width:100%"></a><h4>sayMessage1</h4><p>sayMessage4</p></div></div>'
+                                                    var args3 = args2.replace(`sayMessage1`, `${sayMessage1}`)
+                                                    var args4 = args3.replace(`sayMessage2`, `${sayMessage2}`)
+                                                    var args5 = args4.replace(`sayMessage3`, `${sayMessage3}`)
+                                                    var args6 = args5.replace(`sayMessage4`, `${sayMessage4}`)
+                                                    var args7 = args6.replace(`sayMessage5`, `${sayMessage5}`)
+                                                    fs.appendFile('./update.html', args7, function(err) {
+                                                        if (err) console.log(err);
+                                                        console.log('Updated!');
+                                                    });
+                                                })
+                                                fs.readFile(`./map.html`, function(er, data) {
+                                                    user.send(`Hi <@532724702838390798>, you have a new mapper to review!\n\n**Code**:${dataquote}html\n${data}${dataquote}`)
+                                                })
 
                                             })
                                     })
@@ -124,7 +168,6 @@ exports.run = async (client, message, args, ops) => {
                                                 console.log(sayMessage5);
                                                 message.channel.send(`Thank you for giving me the details of the Mapper. We are now reviewing the requested Mapper and if accepted, your request will be on the page shortly.`);
                                                 const user = client.users.get(`532724702838390798`);
-                                                user.send('Hi <@532724702838390798>, you have a new mapper to review!')
                                                 //sayMessage1= MapperName
                                                 //sayMessage2= Mapper Style
                                                 //sayMessage3= Image Source
@@ -141,6 +184,9 @@ exports.run = async (client, message, args, ops) => {
                                                         if (err) console.log(err);
                                                         console.log('Updated!');
                                                     });
+                                                })
+                                                fs.readFile(`./map.html`, function(er, data) {
+                                                    user.send(`Hi <@532724702838390798>, you have a new mapper to review!\n\n**Code**:${dataquote}html\n${data}${dataquote}`)
                                                 })
                                             })
                                     })
