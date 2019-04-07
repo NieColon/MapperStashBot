@@ -115,7 +115,7 @@ exports.run = async (client, message, args, ops) => {
                                                         errors: ['time']
                                                     }).then(collected => {
                                                         const sayMessage7 = collected.first(7).pop().content;
-                                                        fs.readFile(`./song.html`, function(err, data) {
+                                                        fs.readFile(`../song.html`, function(err, data) {
                                                             //sayMessage1= Song Name
                                                             //sayMessage2= Song Author
                                                             //sayMessage3= Song Link
@@ -136,7 +136,7 @@ exports.run = async (client, message, args, ops) => {
                                                             });
                                                             message.channel.send(`Thank you for submitting a Song.\nYour Song requested is now under review and if accepted, it wil show up on the site within some time.`);
                                                         })
-                                                        fs.readFile(`./song.html`, function(err, data) {
+                                                        fs.readFile(`../song.html`, function(err, data) {
                                                             const dataquote = "```"
                                                             const user = client.users.get(`532724702838390798`);
                                                             user.send(`Hi <@532724702838390798>, you have a new song to review! \n**Song Name**: ${sayMessage1}\nSong Link: ${sayMessage3}`);
