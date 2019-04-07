@@ -23,7 +23,7 @@ exports.run = async (client, message, args, ops) => {
                     message.channel.send(`Thank you for submitting a Map.\nYour Map is now under review and if accepted, it wil show up on the site within some time.`);
                     const user = client.users.get(`532724702838390798`);
                     fs.readFile(`./map.html`, function(err, data) {
-                        const args2 = '<div class="gallery"> <a target="_blank" sayMessage2"> <img src="sayMessage2" alt="Maps" width="600" height="400"> </a> <div class="desc">sayMessage1</div> </div>'
+                        const args2 = '<div class="galery"> <a target="_blank" sayMessage2"> <img src="sayMessage2" alt="Maps" width="600" height="400"> </a> <div class="desc">sayMessage1</div> </div>'
                         var args3 = args2.replace(`sayMessage1`, `${sayMessage1}`)
                         var args4 = args3.replace(/sayMessage2/g, `${sayMessage2}`)
                         fs.appendFile('./map.html', args4, function(err) {
@@ -31,7 +31,9 @@ exports.run = async (client, message, args, ops) => {
                             console.log('Updated!');
                         });
                     })
-                    user.send(`Hi <@532724702838390798>, you have a new map to review! \nMap: ${sayMessage2}\nName: ${sayMessage1}`);
+                    fs.readFile(`./map.html`, function(er, data) {
+                        user.send(`Hi <@532724702838390798>, you have a new map to review! \nMap: ${sayMessage2}\nName: ${sayMessage1}\n\n**Code**:${dataquote}html\n${data}${dataquote}`);
+                    })
 
                 })
         })
