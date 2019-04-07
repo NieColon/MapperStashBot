@@ -70,7 +70,7 @@ exports.run = async (client, message, args, ops) => {
                                                     }).then(collected => {
                                                         const sayMessage7 = collected.first(7).pop().content;
                                                         console.log(sayMessage7)
-                                                        fs.readFile(`./song.html`, function(err, data) {
+                                                        fs.readFile(`../song.html`, function(err, data) {
                                                             //sayMessage1= Song Name
                                                             //sayMessage2= Song Author
                                                             //sayMessage3= Song Link
@@ -85,7 +85,7 @@ exports.run = async (client, message, args, ops) => {
                                                             var args7 = args6.replace(/sayMessage5/g, `${sayMessage5}`)
                                                             var args8 = args7.replace(/sayMessage6/g, `${sayMessage6}`)
                                                             var args9 = args8.replace(/sayMessage7/g, `${sayMessage7}`)
-                                                            fs.appendFile('./song.html', args9, function(err) {
+                                                            fs.appendFile('../song.html', args9, function(err) {
                                                                 if (err) console.log(err);
                                                                 console.log('Updated!');
                                                             });
