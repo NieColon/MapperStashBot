@@ -16,13 +16,11 @@ exports.run = async (client, message, args, ops) => {
         var imagetobase = `https://cdn.discordapp.com/attachments/470109023807602699/471821113261817866/Shipping.png`;
         Jimp.read(mUser.avatarURL, function (err, imagetouse) {
             if (err) throw err;
-            imagetouse.quality(60)
-                      .resize(866, 866)
+            imagetouse.resize(866, 866)
                       .write("imagetouse.jpg");
             Jimp.read(mUser2.avatarURL, function (err, imagetouse2) {
             if (err) throw err;
-            imagetouse2.quality(60)
-                      .resize(866, 866)
+            imagetouse2.resize(866, 866)
                       .write("imagetouse2.jpg");
             Jimp.read(imagetobase, function (err, mydude) {
                 if (err) throw err;
