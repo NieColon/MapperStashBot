@@ -5,6 +5,7 @@ exports.run = async (client, message, args, ops) => {
         let result = Math.floor(Math.random() * replies.length);
         let mUser = message.mentions.users.first()
         let mUser2 = message.mentions.users.last()
+        message.channel.send(`Please give me a minute, ${message.author}. It will take me about 20 seconds to make the image!`)
         const username1 = mUser.username
         const username2 = mUser2.username;
         //const ship1 = username1.length; ship1/2
