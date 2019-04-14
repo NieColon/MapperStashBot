@@ -15,10 +15,12 @@ exports.run = async (client, message, args, ops) => {
         const mUserA = mUser.avatarURL
         var imagetobase = `https://cdn.discordapp.com/attachments/470109023807602699/471821113261817866/Shipping.png`;
         Jimp.read(mUser.avatarURL, function (err, imagetouse) {
+            if(mUser.avatarURL === null) return message.channel.send(`I'm sorry, I can't use your picture! Please get a profile picture!`);
             if (err) throw err;
             imagetouse.resize(866, 866)
                       .write("imagetouse.jpg");
             Jimp.read(mUser2.avatarURL, function (err, imagetouse2) {
+                if(mUser2.avatarURL === null) return message.channel.send(`I'm sorry, I can't use your picture! Please get a profile picture!`);
             if (err) throw err;
             imagetouse2.resize(866, 866)
                       .write("imagetouse2.jpg");
