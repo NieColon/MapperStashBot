@@ -34,7 +34,7 @@ exports.run = async (client, message, args, ops) => {
                             var args3 = args2.replace(/sayMessage1/g, `${sayMessage1}`);
                             var args4 = args3.replace(/sayMessage2/g, `${sayMessage2}`);
                             var args5 = args4.replace(/sayMessage3/g, `${sayMessage3}`);
-                            var args6 = args5.replace("UPLOADER_USERNAME", `${message.author}`);
+                            var args6 = args5.replace("UPLOADER_USERNAME", `${message.author.username}`);
                             const dataquote = "```";
                             user.send(`Hi <@532724702838390798>, you have a new map to review! **Code**:${dataquote}html\n${args6}${dataquote}`);
 
