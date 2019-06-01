@@ -20,7 +20,7 @@ exports.run = async (client, message, args, ops) => {
                 })
                 .then(collected => {
                     const sayMessage2 = collected.first(2).pop().content;
-                    mnessage.channel.send(`Please list all tags for this map. Tags can be changed based on mods discrimination. \nValid Tags: **[**modern, historical, topography, world, na, sa, eu, aS, af, au, provinces**]**`);
+                    message.channel.send(`Please list all tags for this map. Tags can be changed based on mods discrimination. \nValid Tags: **[**modern, historical, topography, world, na, sa, eu, aS, af, au, provinces**]**`);
                     const filter3 = m => m.author.equals(message.author);
                     message.channel.awaitMessages(filter3, {
                         max: 1,
