@@ -20,19 +20,24 @@ exports.run = async (client, message, args, ops) => {
                 })
                 .then(collected => {
                     const sayMessage2 = collected.first(2).pop().content;
-                    message.channel.send(`Thank you for submitting a Map.\nYour Map is now under review and if accepted, it wil show up on the site within some time.`);
-                    const user = client.users.get(`532724702838390798`);
-                    fs.readFile(`./map.html`, function(err, data) {
-                        const args2 = '<div class="galery"> <a target="_blank" sayMessage2"> <img src="sayMessage2" alt="Maps" width="600" height="400"> </a> <div class="desc">sayMessage1</div> </div>'
-                        var args3 = args2.replace(`sayMessage1`, `${sayMessage1}`)
-                        var args4 = args3.replace(/sayMessage2/g, `${sayMessage2}`)
-                        fs.appendFile('./map.html', args4, function(err) {
-                            if (err) console.log(err);
-                            console.log('Updated!');
-                        });
-                    })
-                    fs.readFile(`./map.html`, function(er, data) {
-                        user.send(`Hi <@532724702838390798>, you have a new map to review! \nMap: ${sayMessage2}\nName: ${sayMessage1}\n\n**Code**:${dataquote}html\n${data}${dataquote}`);
+                    mnessage.channel.send(`Please list all tags for this map. Tags can be changed based on mods discrimination. \nValid Tags: **[**modern, historical, topography, world, na, sa, eu, aS, af, au, provinces**]**`);
+                    const filter3 = m => m.author.equals(message.author);
+                    message.channel.awaitMessages(filter3, {
+                        max: 1,
+                        time: 10000000,
+                        errors: ['time']
+                    }).then(collected => {
+                      const sayMessage3 = collected.first(3).pop().content;
+                        message.channel.send(`Thank you for submitting a Map.\nYour Map is now under review and if accepted, it wil show up on the site within some time.`);
+                        const user = client.users.get(`532724702838390798`);
+                            const args2 = '<div class="hoverImg sayMessage3"> <a href="sayMessage2"><img class="imgSrc" src="sayMessage2" alt="image" style="background: white;"></a> <div class="img-details fadeIn-right"> <h3>sayMessage1</h3> <p>UPLOADER_USERNAME</p> </div> </div> <!--New Map-->'
+                            var args3 = args2.replace(/sayMessage1/g, `${sayMessage1}`);
+                            var args4 = args3.replace(/sayMessage2/g, `${sayMessage2}`);
+                            var args5 = args4.replace(/sayMessage3/g, `${sayMessage3}`);
+                            var args6 = args5.replace("UPLOADER_USERNAME", `${message.author}`);
+                            const dataquote = "```";
+                            user.send(`Hi <@532724702838390798>, you have a new map to review! **Code**:${dataquote}html\n${args6}${dataquote}`);
+
                     })
 
                 })
