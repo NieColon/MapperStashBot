@@ -50,8 +50,8 @@ exports.run = async (client, message, args, ops) => {
                               var args3 = args2.replace(/sayMessage1/g, `${sayMessage1}`);
                               var args4 = args3.replace(/sayMessage2/g, `${sayMessage2}`);
                               var args5 = args4.replace(/sayMessage3/g, `${sayMessage3}`);
-                              var args6 = args4.replace(/sayMessage4/g, `${sayMessage4}`);
-                              var args7 = args5.replace(/sayMessage5/g, `${sayMessage5}`);
+                              var args6 = args5.replace(/sayMessage4/g, `${sayMessage4}`);
+                              var args7 = args6.replace(/sayMessage5/g, `${sayMessage5}`);
                             const dataquote = "```";
                             console.log(sayMessage3);
                               user.send(`Hi <@532724702838390798>, you have a new mapper to review! **Code**:${dataquote}html\n${args7}${dataquote}`);
