@@ -20,7 +20,7 @@ exports.run = async (client, message, args, ops) => {
                 })
                 .then(collected => {
                     const sayMessage2 = collected.first(2).pop().content;
-                    message.channel.send(`Please list all tags for this mapper. Tags can be changed based on mods discrimination. \nValid Tags: **[**classical, edgy, countryballs**]**, **[**active, inactive, quit**]**, **[**average, popular**]**, and **[**future, modern, history**]** `);
+                    message.channel.send(`Please list all tags for this mapper. Tags can be changed based on mods discrimination. \nValid Tags: **[**classical, edgy, countryballs**]**, **[**active, inactive, quit**]**, **[**average, popular**]**, **[**traditional, animated**]**, and **[**future, modern, history**]** \nPLEASE DONT PUT COMMAS OR BRACKETS, JUST WRITE OUT EACH TAG WITH A SPACE INBETWEEN -COLON`);
                     const filter3 = m => m.author.equals(message.author);
                     message.channel.awaitMessages(filter3, {
                         max: 1,
