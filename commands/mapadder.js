@@ -29,7 +29,7 @@ exports.run = async (client, message, args, ops) => {
                     }).then(collected => {
                       const sayMessage3 = collected.first(3).pop().content;
                         message.channel.send(`Thank you for submitting a Map.\nYour Map is now under review and if accepted, it wil show up on the site within some time.`);
-                        const user = client.users.get(`532724702838390798`);
+                        const user = client.users.get(`214744198044188673`);
                             const args2 = '<div class="hoverImg sayMessage3"> <a href="sayMessage2"><img class="imgSrc" src="sayMessage2" alt="image" style="background: white;"></a> <div class="img-details fadeIn-right"> <h3>sayMessage1</h3> <p>UPLOADER_USERNAME</p> </div> </div> <!--New Map-->'
                             var args3 = args2.replace(/sayMessage1/g, `${sayMessage1}`);
                             var args4 = args3.replace(/sayMessage2/g, `${sayMessage2}`);
