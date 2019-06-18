@@ -45,7 +45,7 @@ exports.run = async (client, message, args, ops) => {
                         }).then(collected => {
                           const sayMessage5 = collected.first(5).pop().content;
                           message.channel.send(`Thank you for submitting a Mapper.\nYour requested Mapper is now under review and if accepted, it wil show up on the site within some time.`);
-                          const user = client.users.get(`532724702838390798`);
+                          const user = client.users.get(`214744198044188673`);
                               const args2 = '<div class="hoverImg sayMessage3"> <div class="imgoverlay"></div> <a href="sayMessage2"><img class="imgSrc" src="sayMessage4" alt="image"style="background: white;" ></a> <div class="img-details fadeIn-right"> <h3>sayMessage1</h3> <p>sayMessage5</p> </div> </div>'
                               var args3 = args2.replace(/sayMessage1/g, `${sayMessage1}`);
                               var args4 = args3.replace(/sayMessage2/g, `${sayMessage2}`);
@@ -54,7 +54,7 @@ exports.run = async (client, message, args, ops) => {
                               var args7 = args6.replace(/sayMessage5/g, `${sayMessage5}`);
                             const dataquote = "```";
                             console.log(sayMessage3);
-                              user.send(`Hi <@532724702838390798>, you have a new mapper to review! **Code**:${dataquote}html\n${args7}${dataquote}`);
+                              user.send(`Hi <@214744198044188673>, you have a new mapper to review! **Code**:${dataquote}html\n${args7}${dataquote}`);
 
 
                         })
