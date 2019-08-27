@@ -22,7 +22,8 @@ const api = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 var client = new discord.Client();
-let prefix = `m!`
+var listArray = ["item1", "item2", "item3"];
+let prefix = `!`
 /* global Map*/
 const active = new Map();
 //Command Handler
@@ -48,9 +49,6 @@ fs.readdir('./commands/', (err, files) => {
 
 
 client.on(`message`, async message => {
-  let fetched = await db.fetch(`prefix_${message.author.id}`);
-    if (fetched === null) prefix = `m!`;
-    else prefix = fetched;
 
     
 
@@ -74,12 +72,7 @@ client.on(`message`, async message => {
     if (cmd) cmd.run(client, message, args);
     console.log(e.stack);
   }
-  if (message.content.startsWith(`m!setprefix`)) {
-    if(!args) message.channel.send(`Please enter a valid prefix!`);
-    db.set(`prefix_${message.author.id}`, args.join(` `)).then(i => {
-        message.channel.send(`Prefix has been set to **${i}**`);
-    });
-}
+  
   
 
   if (!`./commands/${cmd}.js`) {
@@ -88,12 +81,29 @@ client.on(`message`, async message => {
 });
 client.on(`guildCreate`, guild => {
   const user = guild.owner;
-  user.send(`Hello, I am the official bot for MapperStash.net \n \n MapperStash.net is an online Mapping Resource Website to help Mappers of all kinds. With this bot you will be able to request features and upload Mappers to the site, to be found in the next update.`)
+  user.send(`Hello, I am the official bot for Japanese Mapping's **OFFFICIAL** Discord Server.`)
 })
 client.on(`ready`, () => {
   console.log(`Launched!`);
-  client.user.setActivity ("Generating Maps...")
-  client.user.setUsername(`MapperStash`)
-  client.user.setAvatar(`https://cdn.discordapp.com/attachments/556842081537228820/562801149351297045/icoo.png`)
+  client.user.setActivity ("Keeping Colo Sane");
+  client.user.setUsername(`ModTools`);
+  setTimeout(function(){ // in leftToEight() milliseconds run this:
+    sendMessage(); // send the message once
+    var ReminderMillseconds = 7200000;
+    setInterval(function(){ // repeat this every 24 hours
+        sendMessage();
+    }, ReminderMillseconds)
+}, leftToEight())
 });
-client.login(process.env.token);
+function leftToEight(){
+  var d = new Date();
+  return (-d + d.setHours(8,0,0,0));
+}
+
+function sendMessage(){
+  var guild = client.guilds.get('307917498177552385');
+  if(guild && guild.channels.get('587443274441031681')){
+      guild.channels.get('587443274441031681').send("@everyone Make sur to verify yourselves!");
+  }
+}
+client.login(`NjA0MDE3MTYzNTY4Njc2ODk0.XWQ46w.FT-WQH5VEV4z8btPmiZlqOzdsFM`);
