@@ -89,7 +89,7 @@ client.on(`ready`, () => {
   client.user.setUsername(`ModTools`);
   setTimeout(function(){ // in leftToEight() milliseconds run this:
     sendMessage(); // send the message once
-    var ReminderMillseconds = 7200000;
+    var ReminderMillseconds = 864000000;
     setInterval(function(){ // repeat this every 24 hours
         sendMessage();
     }, ReminderMillseconds)
