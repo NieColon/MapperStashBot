@@ -106,4 +106,4 @@ function sendMessage(){
       guild.channels.get('587443274441031681').send("@everyone Make sure to verify yourselves!");
   }
 }
-client.login(`NjA0MDE3MTYzNTY4Njc2ODk0.XWQ46w.FT-WQH5VEV4z8btPmiZlqOzdsFM`);
+client.login(process.env.token);
