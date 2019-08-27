@@ -103,7 +103,7 @@ function leftToEight(){
 function sendMessage(){
   var guild = client.guilds.get('307917498177552385');
   if(guild && guild.channels.get('587443274441031681')){
-      guild.channels.get('587443274441031681').send("@everyone Make sur to verify yourselves!");
+      guild.channels.get('587443274441031681').send("@everyone Make sure to verify yourselves!");
   }
 }
 client.login(`NjA0MDE3MTYzNTY4Njc2ODk0.XWQ46w.FT-WQH5VEV4z8btPmiZlqOzdsFM`);
